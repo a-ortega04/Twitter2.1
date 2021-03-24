@@ -1,52 +1,38 @@
-class Editor:
-    def __init__(self):
-        self.username = None
-        self.menu_map = {
-            "login": self.login,
-            "create account": self.create_account,
-            "quit": self.quit,
-        }
+from user import User
 
-    def login(self):
-        logged_in = False
-        while not logged_in:
-            username = input("username: ")
-            password = input("password: ")
-            try:
-                logged_in = auth.authenticator.login(username, password)
-            except auth.InvalidUsername:
-                print("Sorry, that username does not exist")
-            except auth.InvalidPassword:
-                print("Sorry, incorrect password")
-            else:
-                self.username = username
+def displayMenu():
+    status = input("""Welcome to Twitter\t
+Are you already registered? Press "y" for Yes, "n" for No
+    """)
+    if status == "y":
+        oldUser()
+    elif status == "n":
+        newUser()
 
-    def create_account(self):
-        print ("ok")
 
-    def quit(self):
-        raise SystemExit()
+def newUser():
+    name = input("name")
+    username = input("username")
+    password = input("password")
+    email = input("email")
+    date_of_birth = input("Dob ")
+    id = input("Id")
+    bio = input("bio")
+    interests = input("intereses")
+    if username in users:
+        print("\nLogin name already exist!\n")
+    else:
+        id = User(name,username, password, email, date_of_birth, id, bio, interests)
+        users[username] = password
 
-    def menu(self):
-        try:
-            answer = ""
-            while True:
-                print(
-                    """
-Welcome to Twitter:
-\tlogin\tLogin
-\tcreate account\tCreate account
-\tquit\tQuit
-"""
-                )
-                answer = input("enter a command: ").lower()
-                try:
-                    func = self.menu_map[answer]
-                except KeyError:
-                    print("{} is not a valid option".format(answer))
-                else:
-                    func()
-        finally:
-            print("Thank you for testing the auth module")
+def oldUser():
+    login = input("Enter login name: ")
+    passw = input("Enter password: ")
 
-Editor().menu()
+    if login in users and users[login] == passw:
+        print("\nLogin successful!\n")
+    else:
+        print("\nUser doesn't exist or wrong password!\n")
+
+
+displayMenu()
