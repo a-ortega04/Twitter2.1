@@ -1,9 +1,11 @@
 from user import User
+users = {}
+
 
 def displayMenu():
     status = input("""Welcome to Twitter\t
-Are you already registered? Press "y" for Yes, "n" for No
-    """)
+        Are you already registered? Press "y" for Yes, "n" for No
+            """)
     if status == "y":
         oldUser()
     elif status == "n":
@@ -11,19 +13,21 @@ Are you already registered? Press "y" for Yes, "n" for No
 
 
 def newUser():
-    name = input("name")
-    username = input("username")
-    password = input("password")
-    email = input("email")
-    date_of_birth = input("Dob ")
-    id = input("Id")
-    bio = input("bio")
-    interests = input("intereses")
+    name = input("name: ")
+    username = input("username: ")
+    password = input("password: ")
+    email = input("email: ")
+    date_of_birth = input("Dob: ")
+    id = input("Id: ")
+    bio = input("bio: ")
+    interests = input("intereses: ")
     if username in users:
         print("\nLogin name already exist!\n")
     else:
         id = User(name,username, password, email, date_of_birth, id, bio, interests)
         users[username] = password
+    print("Registration Complete!")
+    return displayMenu()
 
 def oldUser():
     login = input("Enter login name: ")
@@ -33,6 +37,7 @@ def oldUser():
         print("\nLogin successful!\n")
     else:
         print("\nUser doesn't exist or wrong password!\n")
+        return displayMenu()
 
 
 displayMenu()
