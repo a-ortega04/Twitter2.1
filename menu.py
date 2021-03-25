@@ -1,17 +1,22 @@
 from user import User
 
+users = {}
+all_users = []
+logged_in = 0
+
+
 def displayMenu():
     status = input("""Welcome to Twitter\t
 Are you already registered? Press "y" for Yes, "n" for No
     """)
     if status == "y":
-        oldUser()
+        sign_in()
     elif status == "n":
-        newUser()
+        register()
 
 
-def newUser():
-    name = input("name")
+def register():
+    name = input("name: ")
     username = input("username")
     password = input("password")
     email = input("email")
@@ -22,17 +27,23 @@ def newUser():
     if username in users:
         print("\nLogin name already exist!\n")
     else:
-        id = User(name,username, password, email, date_of_birth, id, bio, interests)
+        u = User(name, username, password, email, date_of_birth, id, bio, interests)
         users[username] = password
+        all_users.append
+        print ("Success!!")
 
-def oldUser():
+
+def sign_in():
     login = input("Enter login name: ")
     passw = input("Enter password: ")
 
     if login in users and users[login] == passw:
         print("\nLogin successful!\n")
+        return logged_in += 1
     else:
-        print("\nUser doesn't exist or wrong password!\n")
+        print("\nUser doesn't exist or wrong password!, try again\n")
 
-
-displayMenu()
+while logged_in == 0 :
+    displayMenu()
+else:
+        print ("Sesion Inciada, Bienvenido")
