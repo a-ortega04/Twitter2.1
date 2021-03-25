@@ -1,7 +1,7 @@
-users = {}
 class User:
 
-    def __init__(self, name, username, password, email, date_of_birth, id, bio, interests):
+
+    def __init__(self, name=0, username=0, password=0, email=0, date_of_birth=0, bio=0, interests=0):
         """crea el nuevo objeto cuenta, NO se encuentra loggeado por default
         :param name: nombre del usuario
         :param username: username de usuario
@@ -14,24 +14,8 @@ class User:
         self.password = password
         self.email = email
         self.date_of_birth = date_of_birth
-        self.id = id  # checar
         self.bio = bio
         self.interests = interests  # hacer lista
 
 
-
-def newUser():
-    name = input("name")
-    username = input("username")
-    password = input("password")
-    email = input("email")
-    date_of_birth = input("Dob ")
-    id = input("Id")
-    bio = input("bio")
-    interests = input("intereses")
-    if username in users:
-        print("\nLogin name already exist!\n")
-    else:
-        id = User(name,username, password, email, date_of_birth, id, bio, interests)
-        users[username] = password
 
