@@ -1,12 +1,14 @@
-from user import User
+from user import User, juan, ivan, jerry
 
-userPasswords = {}
+
+userPasswords = {'juanito': '123', 'chupapi': '123', 'jerryman5000': '123'}
 """Diccionario de usuarios/contraseñas"""
 all_users = []
 """Lista de usuarios"""
+all_users.extend([juan, ivan, jerry])
+
 logged_in = 0
 """logged_in = 1 cuando la sesion ya esta iniciada"""
-
 
 def displayMenu():
     """ejecuta el menu principal"""
@@ -51,9 +53,10 @@ def sign_in():
         print("\nUser doesn't exist or wrong password!, try again\n")
 
 
-while logged_in == 0 :
+while logged_in == 0:
     displayMenu()
 else:
         print ("You are now logged in, welcome")
         print (userPasswords)
         print (all_users)
+        #mainMenu()
