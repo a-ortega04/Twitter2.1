@@ -1,42 +1,33 @@
-def Options():
+def options():
     status = input(""" Choose the following options: 
     1. Edit Profile(e.j Name, bio, passw , etc): "1"
-    2. Delete Tweet: "2"
-    3. Create a new Tweet(Max of 100 characters): "3"
+    2. Create a new Tweet(Max of 100 characters): "2"
+    3. Delete Tweet: "3"
     4. Follow other accounts(from name or email): "4"
-    5. Direct Message: "5"
-    6. Close session: "6"
+    5. Close session: "5"
         """)
     if status == "1":
-        Edit_Profile()
+        edit_Profile()
     if status == "2":
-        Delete_Tweet()
+        new_Tweet()
     if status == "3":
-        New_Tweet()
+        delete_Tweet()
     if status == "4":
-        Follow_Acts()
+        follow_Acts()
     if status == "5":
-        DM()
-    if status == "6":
-        Close_ses()
+        close_ses()
 
-def Edit_Profile():
+def edit_Profile():
     print("your profile ")
 
-def Delete_Tweet():
+def delete_Tweet():
     print("your tweet has been deleted")
 
-def New_Tweet():
+def new_Tweet():
     print("you created a tweet")
 
-def Follow_Acts():
+def follow_Acts():
     print("You followed ")
 
-def DM():
-    print("you sent a message to")
-
-def Close_ses():
+def close_ses():
     print("you closed it")
-
-
-Options()
