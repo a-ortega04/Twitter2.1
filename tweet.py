@@ -1,9 +1,10 @@
 import datetime
+from vars import user_logged_in
 latest_tweet = 0
 
 class Tweet:
 
-    def __init__(self, user=[], content=0, likes=0):
+    def __init__(self, user=[], content=[], likes=0):
         self.user = user
         self.content = content
         self.likes = likes
@@ -16,10 +17,17 @@ class Tweet:
          """search tool"""
          return filter in self.content
 
+def new_Tweet():
+    user = user_logged_in
+    content = input ("Write Your Tweet: ")
+    t = Feed(user, content, 0)
+    Feed.tweets.insert(0,t)
+    print("you created a tweet")
 
 
-class Feed:
-    def __init__(self):
+class Feed(Tweet):
+    def __init__(self, user=[], content=[], likes=0):
+        super().__init__(user=[], content=[], likes=0)
         self.tweets = []
 
     def new_tweet(self, user, content, likes):
