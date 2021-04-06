@@ -68,9 +68,17 @@ def myProfile():
 Followers: {}""".format(obj.username, obj.name, obj.bio, obj.followers))
 
 
+
+def close_ses():
+    print("You haved logged out, Thanks for your visit")
+    global logged_in
+    logged_in -= 1
+    user_logged_in.clear()
+    displayMenu()
+
 while logged_in == 0:
     displayMenu()
 else:
-        myProfile()
-        options()
-
+    myProfile()
+    options()
+    close_ses()
