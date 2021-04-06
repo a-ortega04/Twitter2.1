@@ -1,20 +1,9 @@
-from user import User, juanito, chupapi, jerryman5000
-from main_menu import options, edit_Profile, delete_Tweet, new_Tweet, follow_Acts, close_ses, printWall
-
-
-userPasswords = {'juanito': '123', 'chupapi': '123', 'jerryman5000': '123'}
-"""Diccionario de usuarios/contraseñas"""
-all_users = []
-"""Lista de usuarios"""
-all_users.extend([juanito, chupapi, jerryman5000])
+from user import User
+from main_menu import options, edit_Account, delete_Tweet, follow_Acts, close_ses, printWall, myProfile
+from vars import userPasswords, all_users, user_logged_in, myProfile
 
 logged_in = 0
 """logged_in = 1 cuando la sesion ya esta iniciada"""
-
-user_logged_in = []
-"""usurio con sesion iniciada"""
-
-
 
 def displayMenu():
     """ejecuta el menu principal"""
@@ -60,26 +49,11 @@ def sign_in():
         print("\nUser doesn't exist or wrong password!, try again\n")
 
 
-def myProfile():
-    print("My Profile\n")
-    for obj in user_logged_in:
-        print("""{}, {} 
-{}
-Followers: {}""".format(obj.username, obj.name, obj.bio, obj.followers))
-
-
-
-def close_ses():
-    print("You haved logged out, Thanks for your visit")
-    global logged_in
-    logged_in -= 1
-    user_logged_in.clear()
-    displayMenu()
-
 while logged_in == 0:
     displayMenu()
-else:
+while logged_in == 1:
     myProfile()
     printWall()
     options()
+while user_logged_inR ==1:
     close_ses()
