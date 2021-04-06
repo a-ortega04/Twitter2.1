@@ -1,5 +1,5 @@
 from user import User, juanito, chupapi, jerryman5000
-from main_menu import options, edit_Profile, delete_Tweet, new_Tweet, follow_Acts, close_ses
+from main_menu import options, edit_Profile, delete_Tweet, new_Tweet, follow_Acts, close_ses, printWall
 
 
 userPasswords = {'juanito': '123', 'chupapi': '123', 'jerryman5000': '123'}
@@ -80,5 +80,6 @@ while logged_in == 0:
     displayMenu()
 else:
     myProfile()
+    printWall()
     options()
     close_ses()
