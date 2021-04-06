@@ -1,7 +1,7 @@
 def options():
     status = input(""" Choose the following options: 
-    1. Edit Profile(e.j Name, bio, passw , etc): "1"
-    2. Create a new Tweet(Max of 100 characters): "2"
+    1. Edit Profile(e.j Username, bio, passw, int, etc): "1"
+    2. Create a new Tweet: "2"
     3. Delete Tweet: "3"
     4. Follow other accounts(from name or email): "4"
     5. Close session: "5"
@@ -30,4 +30,6 @@ def follow_Acts():
     print("You followed ")
 
 def close_ses():
-    print("you closed it")
+    pass
+
+
