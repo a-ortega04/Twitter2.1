@@ -20,3 +20,11 @@ class Feed(User):
 f = Feed()
 f.new_tweet("Juanito", "i love turtlez", 0)
 f.new_tweet("juanito", "i love baseball", 1)
+
+
+def printWall():
+    Print("Tweeted by: /n)
+    print(t.tweets[0].user)
+    Print(" at " )
+    print(t.tweets[0].creation_date)
+    print(t.tweets[0].content)
