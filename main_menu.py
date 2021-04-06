@@ -1,3 +1,5 @@
+from tweet import Tweet, Feed
+
 def options():
     status = input(""" Choose the following options: 
     1. Edit Profile(e.j Username, bio, passw, int, etc): "1"
@@ -24,6 +26,9 @@ def delete_Tweet():
     print("your tweet has been deleted")
 
 def new_Tweet():
+    print("Write Your Tweet: ")
+    user = User.username
+    t =
     print("you created a tweet")
 
 def follow_Acts():
@@ -32,4 +37,22 @@ def follow_Acts():
 def close_ses():
     pass
 
+def printWall():
+    print(t.tweets[0].user)
+    print(t.tweets[0].creation_date)
+    print(t.tweets[0].content)
+    print(t.tweets[0].likes)
+    print(t.tweets[1].user)
+    print(t.tweets[1].creation_date)
+    print(t.tweets[1].content)
+    print(t.tweets[1].likes)
+    print(t.tweets[2].user)
+    print(t.tweets[2].creation_date)
+    print(t.tweets[2].content)
+    print(t.tweets[2].likes)
+
+t = Feed()
+t.new_tweet("", "", 1)
+t.new_tweet("", "", 1)
+t.new_tweet("", "", 1)
 
