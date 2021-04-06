@@ -1,6 +1,7 @@
 from tweet import Tweet
+from user import User
 
-class Feed:
+class Feed(User):
     def __init__(self):
         self.tweets = []
 
@@ -10,10 +11,12 @@ class Feed:
     def search(self, filter):
         return [tweet for tweet in self.tweets if tweet.match(filter)]
 
+    def new_tweet(self, user, content, likes):
+        self.tweets.append(Tweet(user, content, likes))
+
+
+
 
 f = Feed()
 f.new_tweet("Juanito", "i love turtlez", 0)
 f.new_tweet("juanito", "i love baseball", 1)
-f.tweets
-f.tweets[0].tid
-f.tweets[1].tid
