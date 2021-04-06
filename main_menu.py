@@ -1,32 +1,29 @@
-from user import User, juanito, chupapi, jerryman5000
-
-userPasswords = {'juanito': '123', 'chupapi': '123', 'jerryman5000': '123'}
-"""Diccionario de usuarios/contraseñas"""
-all_users = []
-"""Lista de usuarios"""
-all_users.extend([juanito, chupapi, jerryman5000])
-
-user_logged_in = []
-"""usurio con sesion iniciada"""
-
+from tweet import Tweet, Feed, new_Tweet
+from user import User
+from vars import myProfile
 def options():
-    status = input(""" Choose the following options:
-    1. Edit Profile(e.j Name, bio, passw , etc): "1"
-    2. Create a new Tweet(Max of 100 characters): "2"
-    3. Delete Tweet: "3"
-    4. Follow other accounts(from name or email): "4"
-    5. Close session: "5"
+    status = input(""" Choose the following options: 
+    1. Go to Wall and profile: "1" 
+    2. Edit Account(e.j Username, bio, passw, int, etc): "2"
+    3. Create a new Tweet: "3"
+    4. Delete Tweet: "4"
+    5. Follow other accounts(from name or email): "5"
+    6. Close session: "6"
         """)
     if status == "1":
-        edit_Account()
+        myProfile()
+        printWall()
     if status == "2":
-        new_Tweet()
+        edit_Account()
     if status == "3":
-        delete_Tweet()
+        new_Tweet()
     if status == "4":
-        follow_Acts()
+        delete_Tweet()
     if status == "5":
+        follow_Acts()
+    if status == "6":
         close_ses()
+
 
 def edit_Account():
     changes = (input("""What do you wanna change?
@@ -61,11 +58,34 @@ def edit_Account():
 def delete_Tweet():
     print("your tweet has been deleted")
 
-def new_Tweet():
-    print("you created a tweet")
 
 def follow_Acts():
-    print("You followed")
+    print("You followed ")
 
 def close_ses():
-    pass
+    print("You haved logged out, Thanks for your visit")
+    global user_logged_inRlogged_in
+    user_logged_inR -= 1
+    user_logged_in.clear()
+    displayMenu()
+
+def printWall():
+    print(t.tweets[0].user)
+    print(t.tweets[0].creation_date)
+    print(t.tweets[0].content)
+    print(t.tweets[0].likes)
+    print(t.tweets[1].user)
+    print(t.tweets[1].creation_date)
+    print(t.tweets[1].content)
+    print(t.tweets[1].likes)
+    print(t.tweets[2].user)
+    print(t.tweets[2].creation_date)
+    print(t.tweets[2].content)
+    print(t.tweets[2].likes)
+
+t = Feed()
+t.new_tweet("", "", 1)
+t.new_tweet("", "", 1)
+t.new_tweet("", "", 1)
+
+user_logged_inR = 1
