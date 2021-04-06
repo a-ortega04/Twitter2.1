@@ -9,12 +9,14 @@ class Tweet:
         global latest_tweet
         latest_tweet  +=1
         self.tid = latest_tweet
-
         self.creation_date = datetime.date.today()
 
-    def match(self, filter):
-        """search tool"""
-        return filter in self.content
+    # def match(self, filter):
+    #     """search tool"""
+    #     return filter in self.content
 
-
+    def printTweet(self):
+        print("""{}, {} , 
+{}
+Likes: {}""". format( self.user, self.creation_date, self.content, self.likes))
 
