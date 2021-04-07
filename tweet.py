@@ -28,3 +28,8 @@ class Feed:
     def search(self, filter):
         return [tweet for tweet in self.tweets if tweet.match(filter)]
 
+    def tweets_by(self, user):
+        return [tweet for tweet in self.tweets if tweet.user == user]
+
+    def delete_tweets_by(self, user):
+        self.tweets = [tweet for tweet in self.tweets if tweet.user != user]
