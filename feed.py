@@ -20,7 +20,16 @@ class Feed(User):
 f = Feed()
 f.new_tweet("Juanito", "i love turtlez", 0)
 f.new_tweet("juanito", "i love baseball", 1)
-
+t.new_tweet("juanito", "Al right hear me out, i just hate pickles", 3)
+t.new_tweet("juanito"," Fornite new update is trash ", 67)
+t.new_tweet("juanito", "Damn you pepe", 5)
+t.new_tweet("carlos", "I love Kpop", 3)
+t.new_tweet("chupapi", "Not wearing a shirt is my passion", 1)
+t.new_tweet("chupapi","The new carmello bolivianos song is fire", 9)
+t.new_tweet("chupapi", "Chupapi muñanyo no cap", 5)
+t.new_tweet("jerryman5000", "I hate mondays ", 3)
+t.new_tweet("jerryman5000","Netflix should put back shrek")
+t.new_tweet("jerryman5000", "Do you think the little chinese is still lost in the woods?")
 
 def printWall():
     Print("Tweeted by: /n)
