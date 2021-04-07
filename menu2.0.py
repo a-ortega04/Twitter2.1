@@ -1,10 +1,10 @@
 import sys
 from tweet import Feed
 from user import User
-from listsDic import userPasswords, all_users, user_logged_in
+from listsDic import userPasswords, all_users, myProfile
 
-logged_in = 0
-"""logged_in = 1 cuando la sesion ya esta iniciada"""
+user_logged_in = None
+"""usurio con sesion iniciada"""
 
 
 def displayMenu():
@@ -34,7 +34,7 @@ def register():
         u = User(name, username, password, email, date_of_birth, bio, interests)
         userPasswords[username] = password
         all_users.append(u)
-        user_logged_in.append(u)
+        #user_logged_in.append(u)
         print ("Success!!")
 
 
@@ -45,8 +45,7 @@ def sign_in():
 
     if login in userPasswords and userPasswords[login] == passw:
         print("\nLogin successful!\n")
-        global logged_in
-        logged_in += 1
+        user_logged_in = login
     else:
         print("\nUser doesn't exist or wrong password!, try again\n")
 
@@ -87,6 +86,7 @@ Welcome To Twitter
                 print("{0} is not a valid choice". format(choice))
 
     def print_wall(self, tweets=None):
+        myProfile(user_logged_in)
         if not tweets:
             tweets = self.feed.tweets
         for tweet in tweets:
@@ -98,13 +98,14 @@ Welcome To Twitter
         pass
 
     def add_tweet(self):
-        user = "test"
+        usercopy = user_logged_in.username
+        user = usercopy
         content = input("Type your tweet")
         self.feed.new_tweet(user, content, likes=0)
         print("succes")
 
     def delete_tweet(self):
-        pass
+            self.feed.erase()
 
     def follow(self):
         pass
@@ -113,7 +114,7 @@ Welcome To Twitter
         print("Thanks for using twitter.")
         sys.exit(0)
 
-while logged_in == 0:
+while user_logged_in is None:
     displayMenu()
 else:
     Menu().run()
