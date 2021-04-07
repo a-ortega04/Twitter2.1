@@ -16,8 +16,9 @@ class User:
         self.email = email
         self.date_of_birth = date_of_birth
         self.bio = bio
-        self.interests = interests  # hacer lista
+        self.interests = interests
         self.followers = followers
+
 
     def _encrypt_pw(self, password):
         hash_string = self.username + password
@@ -29,12 +30,6 @@ class User:
         user, false otherwise."""
         encrypted = self._encrypt_pw(password)
         return encrypted == self.password
-
-    def printProfile(self):
-        print("""{}, {} 
-{}
-Followers: {}""". format( self.username, self.name, self.bio, self.followers))
-
 
 juanito = User("Juan of the Tower", "juanito", "123", "j@gmail.com", "2-2-1913", "i like baseball, and fortnite", "baseball, videogames, hot chicks")
 chupapi = User("Ivan Sanchez", "Chupapi", "123", "chupapi@gmail.com", "4-20-69", "He/him, ICC, Proud husband and father of two ", "football, videogames and hot chicks")
