@@ -7,15 +7,11 @@ all_users = []
 """Lista de usuarios"""
 all_users.extend([juanito, chupapi, jerryman5000])
 
-user_logged_in = []
-"""usurio con sesion iniciada"""
 
-tweet_list = []
 
-def myProfile():
+def myProfile(user_logged_in):
     print("My Profile\n")
-    for obj in user_logged_in:
-        print("""{}, {} 
+    print("""{}, {} 
 {}
 Followers: {}
-""".format(obj.username, obj.name, obj.bio, obj.followers))
+""".format(user_logged_in.username, user_logged_in.name, user_logged_in.bio, user_logged_in.followers))
