@@ -6,7 +6,7 @@ from listsDic import userPasswords, all_users, myProfile
 user_logged_in = None
 """usurio con sesion iniciada"""
 
-
+#imprimir menu
 def displayMenu():
     """ejecuta el menu principal"""
     status = input("""Welcome to Twitter\t
