@@ -2,7 +2,7 @@ import sys
 from tweet import Feed
 from user import User
 from listsDic import userPasswords, all_users, myProfile
-
+#Inicio de user
 user_logged_in = None
 """usurio con sesion iniciada"""
 
