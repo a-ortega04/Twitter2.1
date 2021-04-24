@@ -17,7 +17,7 @@ Are you already registered? Press "y" for Yes, "n" for No
     elif status == "n":
         register()
 
-
+# se registra la informacion
 def register():
     """registra usuario nuevo"""
     name = input("Please type a name: ")
