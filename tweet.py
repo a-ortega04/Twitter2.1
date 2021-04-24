@@ -1,7 +1,7 @@
 import datetime
 latest_tweet = 0
 
-
+# Incio de clase tweet
 class Tweet:
 
     def __init__(self, user=[], content=[], likes=0):
