@@ -1,6 +1,6 @@
 from user import juanito, chupapi, jerryman5000
 
-
+#crear las contraseñas
 userPasswords = {'juanito': '123', 'chupapi': '123', 'jerryman5000': '123'}
 """Diccionario de usuarios/contraseñas"""
 all_users = []
