@@ -111,6 +111,6 @@ class TwitterApp:
         print("Thanks for using twitter.")
         sys.exit(0)
 
-#runs the app
+
 app = TwitterApp()
 app.run()
