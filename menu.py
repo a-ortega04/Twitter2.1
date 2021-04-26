@@ -3,7 +3,7 @@ from tweet import Feed
 from user import User
 from listsDic import userPasswords, all_users
 
-
+"""aquí se hace un menú de clase objeto"""
 class TwitterApp:
     def __init__(self):
         self.feed = Feed()
@@ -27,6 +27,7 @@ class TwitterApp:
         elif status == "n":
             self.register()
 
+            """Aquí es donde se registra el usuario"""
     def register(self):
         """registra usuario nuevo"""
         name = input("Please type a name: ")
