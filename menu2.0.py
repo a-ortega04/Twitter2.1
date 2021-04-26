@@ -78,7 +78,7 @@ Welcome To Twitter
     def run(self):
         while True:
             self.display_menu()
-            choice = input("enter a number")
+            choice = input("Enter a number: ")
             action = self.choices.get(choice)
             if action:
                 action()
