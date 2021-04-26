@@ -37,7 +37,7 @@ def register():
         #user_logged_in.append(u)
         print ("Success!!")
 
-
+#Aquí es donde se hace login con los datos registrados del usuario. 
 def sign_in():
     """inicia sesion"""
     login = input("Enter login name: ")
@@ -49,6 +49,7 @@ def sign_in():
     else:
         print("\nUser doesn't exist or wrong password!, try again\n")
 
+"""aquí se hace la creación del objeto menú"""
 class Menu:
 
     def __init__(self):
@@ -107,6 +108,7 @@ Welcome To Twitter
     def delete_tweet(self):
             self.feed.erase()
 
+"""aquí se tiene que hacer pass porque ya tenemos una función similar"""
     def follow(self):
         pass
 
