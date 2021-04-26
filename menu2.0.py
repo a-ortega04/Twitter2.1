@@ -100,7 +100,7 @@ Welcome To Twitter
     def add_tweet(self):
         usercopy = user_logged_in.username
         user = usercopy
-        content = input("Type your tweet")
+        content = input("Type your tweet: ")
         self.feed.new_tweet(user, content, likes=0)
         print("succes")
 

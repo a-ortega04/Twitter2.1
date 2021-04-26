@@ -79,7 +79,7 @@ class TwitterApp:
                 self.display_login_menu()
             else:
                 self.display_menu()
-                choice = input("enter a number")
+                choice = input("Enter a number: ")
                 action = self.choices.get(choice)
                 if action:
                     action()
@@ -94,9 +94,9 @@ class TwitterApp:
 
 
     def add_tweet(self):
-        content = input("Type your tweet")
+        content = input("Type your tweet: ")
         self.feed.new_tweet(self.user_logged_in, content, likes=0)
-        print("succes")
+        print("Success!")
 
     def delete_tweet(self):
         self.feed.delete_tweets_by(self.user_logged_in)
